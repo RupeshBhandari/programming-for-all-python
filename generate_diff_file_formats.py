@@ -2,6 +2,7 @@ import os
 import subprocess
 import glob
 
+# file formats
 file_format = 'pdf'
 
 # Directories

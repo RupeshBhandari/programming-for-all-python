@@ -14,11 +14,11 @@ Welcome to the repository for the Python edition of "Programming for All"!
 - [Chapter 1: Getting Started with Python](chapters/03-chapter1.md)
 - [Chapter 2: Python Basics](chapters/04-chapter2.md)
 - [Chapter 3: Data Structures in Python](chapters/05-chapter3.md)
-- [Chapter 4: Working with Functions](chapters/06-chapter4.md)
-- [Chapter 5: Object-Oriented Programming in Python](chapters/07-chapter5.md)
-- [Chapter 6: Python Libraries and Modules](chapters/08-chapter6.md)
-- [Chapter 7: Advanced Python Topics](chapters/09-chapter7.md)
-- [Chapter 8: Real-World Python Projects](chapters/10-chapter8.md)
+- [Chapter 4: Object-Oriented Programming in Python](chapters/06-chapter4.md)
+- [Chapter 5: Advanced Python Features](chapters/07-chapter5.md)
+- [Chapter 6: Applications of Python](chapters/08-chapter6.md)
+- [Chapter 7: Tips and Tricks](chapters/09-chapter7.md)
+- [Chapter 8: Conclusion](chapters/10-chapter8.md)
 
 ## Getting Started
 
