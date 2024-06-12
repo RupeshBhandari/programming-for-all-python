@@ -22,7 +22,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Install necessary dependencies (e.g., Pandoc)
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive texlive-xetex
 
       - name: Create directories
         run: |
@@ -30,17 +31,21 @@ jobs:
           mkdir -p generated/epub
           mkdir -p generated/pdf
 
+      - name: Combine Markdown files
+        run: |
+          cat chapters/*.md > combined.md
+
       - name: Generate HTML
         run: |
-          # Command to generate HTML format (e.g., using Pandoc)
+          pandoc combined.md -o generated/html/book.html
 
       - name: Generate EPUB
         run: |
-          # Command to generate EPUB format (e.g., using Pandoc)
+          pandoc combined.md -o generated/epub/book.epub
 
       - name: Generate PDF
         run: |
-          # Command to generate PDF format (e.g., using Pandoc)
+          pandoc combined.md -o generated/pdf/book.pdf
 
       - name: Upload generated files
         uses: actions/upload-artifact@v2

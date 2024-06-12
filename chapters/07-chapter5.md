@@ -18,7 +18,7 @@ except ZeroDivisionError:
 
 In this example, we have used the **`try`** statement to enclose a block of code that may raise an exception. If an exception is raised, the code in the **`except`** block will be executed. In this case, we are handling the **`ZeroDivisionError`** exception, which is raised when trying to divide by zero.
 
-You can also use the **`finally`** statement to execute a block of code regardless of whether an exception is raised or not. For example:
+You can also use the **`finally`** statement to execute a block of code *regardless* of whether an exception is raised or not. For example:
 
 ```python
 
