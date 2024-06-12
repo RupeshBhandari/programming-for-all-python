@@ -1,6 +1,7 @@
 import os
 import subprocess
 import glob
+from PyPDF2 import PdfMerger
 
 # file formats
 file_format = 'pdf'
@@ -10,7 +11,8 @@ input_directory = "chapters/"
 output_directory = f"generated/{file_format}"
 
 # Output HTML file
-output_file = f"programming-for-all-python.{file_format}"
+output_file = f"generated/{file_format}/programming-for-all-python.{file_format}"
+
 
 # Get a list of Markdown files in the input directory
 md_files = glob.glob(os.path.join(input_directory, "*.md"))
@@ -30,12 +32,23 @@ for md_file in md_files:
 
 # # Combine all HTML files into one
 # # Open the output file in append mode
-# with open(output_file, "a") as outfile:
-#     # Loop through each HTML file
-#     for html_file in html_files:
-#         # Open the current HTML file and read its contents
-#         with open(html_file, "r") as infile:
-#             # Write the contents of the current HTML file to the output file
-#             outfile.write(infile.read())
-#             # Add a newline character to separate the contents of each file
-#             outfile.write("\n")
+if file_format == 'html':
+    with open(output_file, "a") as outfile:
+        # Loop through each HTML file
+        for html_file in html_files:
+            # Open the current HTML file and read its contents
+            with open(html_file, "r") as infile:
+                # Write the contents of the current HTML file to the output file
+                outfile.write(infile.read())
+                # Add a newline character to separate the contents of each file
+                outfile.write("\n")
+
+
+if file_format == 'pdf':
+    merger = PdfMerger()
+
+    for pdf in html_files:
+        merger.append(pdf)
+
+    merger.write(output_file)
+    merger.close()
