@@ -35,9 +35,9 @@ jobs:
         run: |
           cat chapters/*.md > combined.md
 
-      - name: Generate HTML
-        run: |
-          pandoc combined.md -o generated/html/book.html
+      # - name: Generate HTML
+      #   run: |
+      #     pandoc combined.md -o generated/html/book.html
 
       - name: Generate EPUB
         run: |
