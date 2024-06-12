@@ -1,0 +1,356 @@
+<h1 id="chapter-5-advanced-python-features">Chapter 5: Advanced Python
+Features</h1>
+<h2 id="exception-handling">Exception handling</h2>
+<p>Exception handling is a mechanism that allows you to handle errors
+and exceptions that may occur in your code. It allows you to write code
+that can gracefully handle unexpected input, errors, and exceptions, and
+it can help you to write more robust and reliable programs.</p>
+<p>Here is an example of how to use the
+<strong><code>try</code></strong> and
+<strong><code>except</code></strong> statements to handle an
+exception:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    num1 <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Enter a number: &#39;</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    num2 <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Enter another number: &#39;</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> num1 <span class="op">/</span> num2</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Cannot divide by zero&#39;</span>)</span></code></pre></div>
+<p>In this example, we have used the <strong><code>try</code></strong>
+statement to enclose a block of code that may raise an exception. If an
+exception is raised, the code in the
+<strong><code>except</code></strong> block will be executed. In this
+case, we are handling the
+<strong><code>ZeroDivisionError</code></strong> exception, which is
+raised when trying to divide by zero.</p>
+<p>You can also use the <strong><code>finally</code></strong> statement
+to execute a block of code regardless of whether an exception is raised
+or not. For example:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    num1 <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Enter a number: &#39;</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    num2 <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&#39;Enter another number: &#39;</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> num1 <span class="op">/</span> num2</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Cannot divide by zero&#39;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">finally</span>:</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Exiting the program&#39;</span>)</span></code></pre></div>
+<p>In this example, the code in the
+<strong><code>finally</code></strong> block will be executed regardless
+of whether an exception is raised or not.</p>
+<h2 id="generators-and-iterators">Generators and iterators</h2>
+<p>A generator is a function that generates a sequence of values
+on-demand, rather than returning a whole sequence at once. Generators
+are implemented using the <strong><code>yield</code></strong> keyword,
+which allows the function to return a value and then resume execution at
+the same point the next time it is called.</p>
+<p>Here is an example of a generator function that generates a sequence
+of numbers:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_range(n):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> n:</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> i</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the generator</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> my_range(<span class="dv">5</span>):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 0 1 2 3 4</span></span></code></pre></div>
+<p>In this example, the <strong><code>my_range</code></strong> function
+is a generator that generates a sequence of numbers from 0 to
+<strong><code>n-1</code></strong>. We can use a
+<strong><code>for</code></strong> loop to iterate over the sequence
+generated by the generator.</p>
+<p>An iterator is an object that allows you to iterate over a sequence
+of values. All objects that support iteration are also iterators.</p>
+<p>Here is an example of how to use the
+<strong><code>iter()</code></strong> function to create an iterator from
+a list:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an iterator from the list</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>it <span class="op">=</span> <span class="bu">iter</span>(my_list)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate over the iterator</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">next</span>(it)) <span class="co"># Output: 1</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">next</span>(it)) <span class="co"># Output: 2</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">next</span>(it)) <span class="co"># Output: 3</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">next</span>(it)) <span class="co"># Output: 4</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">next</span>(it)) <span class="co"># Output: 5</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># The iterator is exhausted</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">next</span>(it)) <span class="co"># Raises StopIteration</span></span></code></pre></div>
+<p>In this example, we have used the
+<strong><code>iter()</code></strong> function to create an iterator from
+the <strong><code>my_list</code></strong> object. We can then use the
+<strong><code>next()</code></strong> function to retrieve the next value
+from the iterator. When the iterator is exhausted, the
+<strong><code>next()</code></strong> function raises a
+<strong><code>StopIteration</code></strong> exception.</p>
+<h2 id="decorators">Decorators</h2>
+<p>A decorator is a function that takes another function and extends the
+behavior of the latter function without explicitly modifying its code.
+Decorators are a powerful and convenient way to modify or enhance the
+functionality of a function, and they are often used to add additional
+behavior to functions that are called before or after the original
+function is executed.</p>
+<p>Here is an example of how to use a decorator to add additional
+behavior to a function:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_decorator(func):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> wrapper():</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Before calling the function&#39;</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        func()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;After calling the function&#39;</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> wrapper</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">@my_decorator</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Inside the function&#39;</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the decorated function</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>my_function()</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Before calling the function</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#         Inside the function</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#         After calling the function</span></span></code></pre></div>
+<p>In this example, we have defined a decorator function called
+<strong><code>my_decorator</code></strong> that takes a function and
+returns a wrapper function. The wrapper function adds additional
+behavior before and after calling the original function.</p>
+<p>We have then used the <strong><code>@</code></strong> symbol to
+decorate the <strong><code>my_function</code></strong> function with the
+<strong><code>my_decorator</code></strong> decorator. When we call the
+decorated <strong><code>my_function</code></strong>, the additional
+behavior added by the decorator is executed before and after the
+function is called.</p>
+<p>Decorators are often used to add logging, authentication, or other
+types of behavior to functions. They are a powerful and convenient way
+to modify the behavior of a function without modifying its code.</p>
+<h2 id="working-with-modules-and-packages">Working with modules and
+packages</h2>
+<p><strong>Modules</strong></p>
+<p>Modules are files that contain a collection of functions, variables,
+and other code that can be used in other Python programs. Modules are a
+way to organize and reuse code, and they help make Python programs more
+modular and maintainable.</p>
+<p>To use a module in a Python program, you can use the
+<strong><code>import</code></strong> statement. For example, to import
+the <strong><code>math</code></strong> module, which contains a
+collection of mathematical functions, you can use the following
+code:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> math.sqrt(<span class="dv">16</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 4.0</span></span></code></pre></div>
+<p>You can also import specific functions or variables from a module
+using the <strong><code>from</code></strong> keyword. For example:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> sqrt(<span class="dv">16</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 4.0</span></span></code></pre></div>
+<p>You can also use the <strong><code>as</code></strong> keyword to give
+a function or variable a different name when importing it. For
+example:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt <span class="im">as</span> square_root</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> square_root(<span class="dv">16</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 4.0</span></span></code></pre></div>
+<p><strong>Packages</strong></p>
+<p>Packages are collections of modules that are organized into a
+directory structure. Packages are a way to organize larger Python
+programs, and they allow you to divide your code into smaller, more
+reusable pieces.</p>
+<p>To use a package in a Python program, you can use the
+<strong><code>import</code></strong> statement with the name of the
+package and the name of the module you want to use, separated by a dot.
+For example:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mypackage.mymodule</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> mypackage.mymodule.some_function()</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre></div>
+<p>You can also import specific functions or variables from a package
+using the <strong><code>from</code></strong> keyword. For example:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mypackage <span class="im">import</span> mymodule</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> mymodule.some_function()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre></div>
+<p>You can also use the <strong><code>as</code></strong> keyword to give
+a function or variable a different name when importing it. For
+example:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mypackage <span class="im">import</span> mymodule <span class="im">as</span> mm</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> mm.some_function()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre></div>
+<p>In addition to using the <strong><code>import</code></strong>
+statement, you can also use the
+<strong><code>__init__.py</code></strong> file to define what gets
+imported when you use the <strong><code>import</code></strong> statement
+with the name of a package. For example, you can use the
+<strong><code>__init__.py</code></strong> file to import specific
+modules or functions from the package and make them available when the
+package is imported.</p>
+<h2 id="working-with-dates-and-times">Working with dates and times</h2>
+<p>You can use the <strong><code>datetime</code></strong> module to work
+with dates and times. The <strong><code>datetime</code></strong> module
+provides classes for representing dates, times, and timestamps, and it
+also provides functions for working with these objects.</p>
+<p>Here is an example of how to use the
+<strong><code>datetime</code></strong> module to get the current date
+and time:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the current date and time</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> datetime.now()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(now)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: 2022-12-26 14:47:59.438123</span></span></code></pre></div>
+<p>In this example, we have imported the
+<strong><code>datetime</code></strong> module and used the
+<strong><code>datetime.now()</code></strong> function to get the current
+date and time. The <strong><code>now</code></strong> variable is set to
+a <strong><code>datetime</code></strong> object that represents the
+current date and time.</p>
+<p>You can also use the <strong><code>datetime</code></strong> module to
+create <strong><code>datetime</code></strong> objects for specific dates
+and times, and to perform operations on these objects, such as
+formatting, arithmetic, and comparison.</p>
+<p>Here is an example of how to create a
+<strong><code>datetime</code></strong> object for a specific date and
+time, and how to format it:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a date and time</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> datetime(<span class="dv">2022</span>, <span class="dv">12</span>, <span class="dv">26</span>, <span class="dv">14</span>, <span class="dv">50</span>, <span class="dv">0</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Format the date and time</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>formatted <span class="op">=</span> dt.strftime(<span class="st">&#39;%B </span><span class="sc">%d</span><span class="st">, %Y %I:%M %p&#39;</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(formatted)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: December 26, 2022 02:50 PM</span></span></code></pre></div>
+<p>In this example, we have used the
+<strong><code>datetime</code></strong> constructor to create a
+<strong><code>datetime</code></strong> object for the date and time
+December 26, 2022, 2:50 PM. We have then used the
+<strong><code>strftime()</code></strong> method to format the date and
+time as a string.</p>
+<h2 id="working-with-databases">Working with databases</h2>
+<p>You can use various libraries and frameworks to interact with
+databases. Some popular options include:</p>
+<ul>
+<li><strong><code>sqlite3</code></strong>: A built-in Python library for
+working with SQLite databases</li>
+<li><strong><code>psycopg2</code></strong>: A library for working with
+PostgreSQL databases</li>
+<li><strong><code>MySQLdb</code></strong>: A library for working with
+MySQL databases</li>
+<li><strong><code>SQLAlchemy</code></strong>: A powerful and flexible
+library for working with a variety of databases, including MySQL,
+PostgreSQL, and SQLite</li>
+</ul>
+<p>Here is an example of how to use the
+<strong><code>sqlite3</code></strong> library to create a database and
+table, insert data into the table, and query the data:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the database</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&#39;mydatabase.db&#39;</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a cursor</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a table</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&#39;&#39;&#39;CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT)&#39;&#39;&#39;</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert data into the table</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&#39;&#39;&#39;INSERT INTO users (name, email) VALUES (?, ?)&#39;&#39;&#39;</span>, (<span class="st">&#39;John&#39;</span>, <span class="st">&#39;john@example.com&#39;</span>))</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&#39;&#39;&#39;INSERT INTO users (name, email) VALUES (?, ?)&#39;&#39;&#39;</span>, (<span class="st">&#39;Jane&#39;</span>, <span class="st">&#39;jane@example.com&#39;</span>))</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit the changes</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>conn.commit()</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Query the data</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&#39;&#39;&#39;SELECT * FROM users&#39;&#39;&#39;</span>)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch the results</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> cursor.fetchall()</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> result <span class="kw">in</span> results:</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the connection</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>conn.close()</span></code></pre></div>
+<p>In this example, we have imported the
+<strong><code>sqlite3</code></strong> library and used it to connect to
+a database, create a table, insert data into the table, and query the
+data. We have also used a cursor to execute SQL statements and fetch the
+results.</p>
+<h2 id="working-with-regular-expressions">Working with regular
+expressions</h2>
+<p>Regular expressions are a powerful tool for matching and manipulating
+strings. They are used in many programming languages, including Python,
+to search for patterns in strings, extract information from strings, and
+replace or manipulate parts of strings.</p>
+<p>You can use the <strong><code>re</code></strong> module to work with
+regular expressions. Here is an example of how to use the
+<strong><code>re</code></strong> module to search for a pattern in a
+string:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="st">&#39;The quick brown fox jumps over the lazy dog.&#39;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>pattern <span class="op">=</span> <span class="vs">r&#39;quick&#39;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>match <span class="op">=</span> re.search(pattern, string)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> match:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Match found:&#39;</span>, match.group())</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Match not found&#39;</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Match found: quick</span></span></code></pre></div>
+<p>In this example, we have imported the
+<strong><code>re</code></strong> module and defined a string and a
+pattern to search for. We have then used the
+<strong><code>re.search()</code></strong> function to search for the
+pattern in the string. If a match is found, the
+<strong><code>match</code></strong> variable is set to a
+<strong><code>Match</code></strong> object that contains information
+about the match, and we can use the
+<strong><code>group()</code></strong> method to get the matched
+string.</p>
+<p>Here is an example of how to use the <strong><code>re</code></strong>
+module to extract information from a string:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="st">&#39;The quick brown fox jumps over the lazy dog.&#39;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>pattern <span class="op">=</span> <span class="vs">r&#39;(quick) (brown) (fox)&#39;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>match <span class="op">=</span> re.search(pattern, string)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> match:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Match found:&#39;</span>, match.groups())</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&#39;Match not found&#39;</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Output: Match found: (&#39;quick&#39;, &#39;brown&#39;, &#39;fox&#39;)</span></span></code></pre></div>
+<p>In this example, we have defined a pattern that contains three
+groups, which are enclosed in parentheses. When we search for the
+pattern in the string and find a match, the
+<strong><code>groups()</code></strong> method returns a tuple of the
+matched strings for each group.</p>
