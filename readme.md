@@ -9,8 +9,6 @@ Welcome to the repository for the Python edition of "Programming for All"!
 ## Table of Contents
 
 - [Preface](chapters/00-preface.md)
-- [Introduction](chapters/01-introduction.md)
-- [Table of Contents](chapters/02-toc.md)
 - [Chapter 1: Getting Started with Python](chapters/03-chapter1.md)
 - [Chapter 2: Python Basics](chapters/04-chapter2.md)
 - [Chapter 3: Data Structures in Python](chapters/05-chapter3.md)
