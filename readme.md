@@ -8,15 +8,65 @@ Welcome to the repository for the Python edition of "Programming for All"!
 
 ## Table of Contents
 
-- [Preface](chapters/00-preface.md)
-- [Chapter 1: Getting Started with Python](chapters/03-chapter1.md)
-- [Chapter 2: Python Basics](chapters/04-chapter2.md)
-- [Chapter 3: Data Structures in Python](chapters/05-chapter3.md)
-- [Chapter 4: Object-Oriented Programming in Python](chapters/06-chapter4.md)
-- [Chapter 5: Advanced Python Features](chapters/07-chapter5.md)
-- [Chapter 6: Applications of Python](chapters/08-chapter6.md)
-- [Chapter 7: Tips and Tricks](chapters/09-chapter7.md)
-- [Chapter 8: Conclusion](chapters/10-chapter8.md)
+## Introduction
+- [Introduction](chapters/01-introduction.md)
+  - [Introduction to Python](chapters/01-introduction.md#introduction-to-python)
+  - [History of Python](chapters/01-introduction.md#history-of-python)
+  - [Key Features of Python](chapters/01-introduction.md#key-features-of-python)
+## Part I: Python Basics
+- [Chapter 1: Python Basics](chapters/02-chapter1.md)
+  - [Basic syntax](chapters/02-chapter1.md#basic-syntax)
+  - [Data Types](chapters/02-chapter1.md#data-types)
+  - [Variables and operations](chapters/02-chapter1.md#variables-and-operations)
+
+- [Chapter 2: Control Flow](chapters/03-chapter2.md)
+  - [Conditional Statements](chapters/03-chapter2.md#conditional-statements)
+  - [Loops](chapters/03-chapter2.md#loops)
+  - [Functions](chapters/03-chapter2.md#functions)
+
+## Part II: Data Structures and Functions
+- [Chapter 3: Working with Data Structures](chapters/04-chapter3.md)
+  - [Lists](chapters/04-chapter3.md#lists)
+  - [Tuples](chapters/04-chapter3.md#tuples)
+  - [Dictionaries](chapters/04-chapter3.md#dictionaries)
+  - [Sets](chapters/04-chapter3.md#sets)
+
+- [Chapter 4: Working with Data](chapters/05-chapter4.md)
+  - [Manipulating data](chapters/05-chapter4.md#manipulating-data)
+  - [Reading and writing files](chapters/05-chapter4.md#reading-and-writing-files)
+  - [Exception handling](chapters/05-chapter4.md#exception-handling)
+
+## Part III: Object-Oriented Programming
+- [Chapter 5: Object-Oriented Programming in Python](chapters/06-chapter5.md)
+    - [Classes and objects](chapters/06-chapter5.md#classes-and-objects)
+    - [Inheritance and polymorphism](chapters/06-chapter5.md#inheritance-and-polymorphism)
+    - [Encapsulation and data hiding](chapters/06-chapter5.md#encapsulation-and-data-hiding)
+    - [Concurrency](chapters/06-chapter5.md#concurrency)
+
+## Part IV: Advanced Python Features
+- [Chapter 6: Advanced Python Features](chapters/07-chapter6.md)
+    - [Generators and iterators](chapters/07-chapter6.md#generators-and-iterators)
+    - [Decorators](chapters/07-chapter6.md#decorators)
+    - [Working with modules and packages](chapters/07-chapter6.md#working-with-modules-and-packages)
+
+## Part V: Python Applications
+- [Chapter 7: Applications of Python](chapters/08-chapter7.md)
+  - [Data analysis and visualization](chapters/08-chapter7.md#data-analysis-and-visualization)
+  - [Web development](chapters/08-chapter7.md#web-development)
+  - [Automation](chapters/08-chapter7.md#automation)
+  - [Scientific computing](chapters/08-chapter7.md#scientific-computing)
+
+## Part VI: Best Practices and Beyond
+- [Chapter 8: Tips and Tricks](chapters/09-chapter8.md)
+  - [Best practices for writing Python code](chapters/09-chapter8.md#best-practices-for-writing-python-code)
+  - [Debugging techniques](chapters/09-chapter8.md#debugging-techniques)
+  - [Common pitfalls to avoid](chapters/09-chapter8.md#common-pitfalls-to-avoid)
+- [Chapter 9: Conclusion](chapters/10-chapter9.md)
+
+## Appendices
+- [Appendix A: Python Cheat Sheet](chapters/10-appendixA.md)
+- [Appendix B: Glossary of Terms](chapters/11-appendixB.md)
+- [Appendix C: Solutions to Exercises](chapters/12-appendixC.md)
 
 ## Getting Started
 

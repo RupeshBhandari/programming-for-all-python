@@ -1,39 +1,4 @@
-# Chapter 5: Advanced Python Features
-
-## Exception handling
-
-Exception handling is a mechanism that allows you to handle errors and exceptions that may occur in your code. It allows you to write code that can gracefully handle unexpected input, errors, and exceptions, and it can help you to write more robust and reliable programs.
-
-Here is an example of how to use the **`try`** and **`except`** statements to handle an exception:
-
-```python
-try:
-    num1 = int(input('Enter a number: '))
-    num2 = int(input('Enter another number: '))
-    result = num1 / num2
-    print(result)
-except ZeroDivisionError:
-    print('Cannot divide by zero')
-```
-
-In this example, we have used the **`try`** statement to enclose a block of code that may raise an exception. If an exception is raised, the code in the **`except`** block will be executed. In this case, we are handling the **`ZeroDivisionError`** exception, which is raised when trying to divide by zero.
-
-You can also use the **`finally`** statement to execute a block of code *regardless* of whether an exception is raised or not. For example:
-
-```python
-
-try:
-    num1 = int(input('Enter a number: '))
-    num2 = int(input('Enter another number: '))
-    result = num1 / num2
-    print(result)
-except ZeroDivisionError:
-    print('Cannot divide by zero')
-finally:
-    print('Exiting the program')
-```
-
-In this example, the code in the **`finally`** block will be executed regardless of whether an exception is raised or not.
+# Chapter 6: Advanced Python Features
 
 ## Generators and iterators
 

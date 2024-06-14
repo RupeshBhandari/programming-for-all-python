@@ -1,4 +1,4 @@
-# Chapter 7: Tips and Tricks
+# Chapter 8: Tips and Tricks
 
 ## Best practices for writing Python code
 

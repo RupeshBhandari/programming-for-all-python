@@ -11,7 +11,7 @@ we will cover the following topics:
 
 Before we begin, let's define what a conditional statement is. A conditional statement is a programming construct that allows you to execute a certain block of code only if a certain condition is met.
 
-**if statements**
+### if statements
 
 The most basic form of a conditional statement is the **`if`** statement. It has the following syntax:
 
@@ -34,7 +34,7 @@ if x > 0:
 # The output of this code will be: "x is positive"
 ```
 
-**if-else statements**
+### if-else statements
 
 Sometimes, you might want to specify different code blocks to be executed depending on whether the condition is True or False. In such cases, you can use the **`if-else`** statement. It has the following syntax:
 
@@ -58,7 +58,7 @@ else:
 # The output of this code will be: "x is not positive"
 ```
 
-I**f-elif-else statements**
+### if-elif-else statements
 
 Sometimes, you might want to specify multiple conditions and execute different code blocks depending on which condition is met. In such cases, you can use the **`if-elif-else`** statement. It has the following syntax:
 

@@ -1,4 +1,4 @@
-# Chapter 6: Applications of Python
+# Chapter 7: Applications of Python
 
 ## Data analysis and visualization
 

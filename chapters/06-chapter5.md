@@ -1,4 +1,4 @@
-# Chapter 4: Object-Oriented Programming
+# Chapter 5: Object-Oriented Programming
 
 ## Introduction to object-oriented programming
 
@@ -164,3 +164,110 @@ Data hiding is a technique in object-oriented programming (OOP) that refers to t
 In this example, we have defined a **`BankAccount`** class that has a **`name`** and **`balance`** attribute, as well as methods for depositing, withdrawing, and checking the balance. We have prefixed the **`name`** and **`balance`** attributes with **`__`**, which is a convention to indicate that these attributes should not be accessed or modified directly from outside the class.
 
 To access or modify the **`name`** and **`balance`** attributes, we have defined methods such as **`get_balance`** and **`deposit`** that allow us to safely manipulate the data. This is an example of encapsulation and data hiding in action.
+
+
+## Concurrency
+
+Concurrency is a crucial concept in programming, allowing multiple tasks to make progress without waiting for each other to complete. Python provides several ways to handle concurrency, including threading, multiprocessing, and asynchronous programming.
+
+##### 1. Threading
+
+Threading is a technique where multiple threads run in the same memory space, allowing for lightweight concurrent execution. Python's `threading` module makes it easy to work with threads.
+
+###### Example of Threading
+
+```python
+import threading
+
+def print_numbers():
+    for i in range(10):
+        print(i)
+
+def print_letters():
+    for letter in 'abcdefghij':
+        print(letter)
+
+# Creating threads
+thread1 = threading.Thread(target=print_numbers)
+thread2 = threading.Thread(target=print_letters)
+
+# Starting threads
+thread1.start()
+thread2.start()
+
+# Waiting for threads to complete
+thread1.join()
+thread2.join()
+```
+
+##### 2. Multiprocessing
+
+Multiprocessing involves running multiple processes simultaneously, each with its own memory space. This approach is particularly useful for CPU-bound tasks. Python's `multiprocessing` module supports creating and managing separate processes.
+
+###### Example of Multiprocessing
+
+```python
+import multiprocessing
+
+def square_numbers():
+    for i in range(10):
+        print(i * i)
+
+# Creating a process
+process = multiprocessing.Process(target=square_numbers)
+
+# Starting the process
+process.start()
+
+# Waiting for the process to complete
+process.join()
+```
+
+##### 3. Asynchronous Programming
+
+Asynchronous programming allows you to write code that performs tasks without blocking the main execution flow. This is particularly useful for I/O-bound tasks like network operations or file reading/writing. Python's `asyncio` module provides tools for asynchronous programming.
+
+###### Example of Asynchronous Programming
+
+```python
+import asyncio
+
+async def fetch_data():
+    print("Start fetching")
+    await asyncio.sleep(2)  # Simulating a network request
+    print("Done fetching")
+
+async def main():
+    await asyncio.gather(
+        fetch_data(),
+        fetch_data(),
+        fetch_data()
+    )
+
+# Running the async function
+asyncio.run(main())
+```
+
+##### 4. Differences and Use Cases
+
+- **Threading**: Best suited for I/O-bound tasks where the primary goal is to avoid blocking operations, such as file I/O or network requests. However, Python's Global Interpreter Lock (GIL) can limit the performance gains in CPU-bound tasks.
+
+- **Multiprocessing**: Ideal for CPU-bound tasks where each process runs on its own CPU core. Since each process has its own memory space, there's no GIL limitation, leading to better performance in compute-intensive tasks.
+
+- **Asynchronous Programming**: Excellent for I/O-bound and high-level structured network code. Asyncio is best used when you need to handle many simultaneous I/O operations, such as multiple network connections.
+
+##### 5. Concurrency in Practice
+
+In practice, choosing the right concurrency model depends on the specific requirements of your application:
+
+- For web scraping, where you wait for HTTP responses, threading or asyncio can be highly effective.
+- For data processing that involves heavy computations, multiprocessing can leverage multiple CPU cores for better performance.
+- For building scalable web servers, asyncio offers an efficient way to handle numerous simultaneous connections.
+
+##### 6. Libraries and Frameworks
+
+Python offers several libraries and frameworks that simplify concurrency:
+
+- **Threading**: `threading` module
+- **Multiprocessing**: `multiprocessing` module
+- **Asynchronous Programming**: `asyncio`, along with higher-level frameworks like `aiohttp` for asynchronous HTTP requests, and `Quart` for asynchronous web applications.
