@@ -63,10 +63,10 @@ Welcome to the repository for the Python edition of "Programming for All"!
   - [Common pitfalls to avoid](chapters/09-chapter8.md#common-pitfalls-to-avoid)
 - [Chapter 9: Conclusion](chapters/10-chapter9.md)
 
-## Appendices
+<!-- ## Appendices
 - [Appendix A: Python Cheat Sheet](chapters/10-appendixA.md)
 - [Appendix B: Glossary of Terms](chapters/11-appendixB.md)
-- [Appendix C: Solutions to Exercises](chapters/12-appendixC.md)
+- [Appendix C: Solutions to Exercises](chapters/12-appendixC.md) -->
 
 ## Getting Started
 
