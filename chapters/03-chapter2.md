@@ -89,6 +89,55 @@ else:
 # The output of this code will be: "x is zero"
 ```
 
+
+### ternary operator
+The ternary operation (also known as the conditional expression) allows you to condense an `if-else` statement into a single line. It is a shorthand way to assign a value to a variable based on a condition.
+
+The syntax for the ternary operator in Python is:
+
+```python
+value_if_true if condition else value_if_false
+```
+
+Here’s a simple example to illustrate its usage:
+
+```python
+# Traditional if-else statement
+if age >= 18:
+    status = "Adult"
+else:
+    status = "Minor"
+
+# Equivalent ternary operation
+status = "Adult" if age >= 18 else "Minor"
+```
+
+In this example, `status` will be set to `"Adult"` if `age` is 18 or older, and `"Minor"` otherwise.
+
+#### Another Example
+
+Suppose you want to assign a value based on whether a number is positive or negative:
+
+```python
+number = 5
+result = "Positive" if number > 0 else "Negative"
+print(result)  # Output: Positive
+```
+
+#### Nested Ternary Operations
+
+You can also nest ternary operations, although this can reduce readability:
+
+```python
+number = 0
+result = "Positive" if number > 0 else "Negative" if number < 0 else "Zero"
+print(result)  # Output: Zero
+```
+
+In this example, `result` will be `"Positive"` if `number` is greater than 0, `"Negative"` if `number` is less than 0, and `"Zero"` if `number` is exactly 0.
+
+While ternary operations can make the code more concise, it's important to use them judiciously to maintain code readability. For more complex conditions, a traditional `if-else` statement might be more appropriate.
+
 ## Loops
 
 Loops are an important control structure, as they allow you to repeat a block of code multiple times. There are two main types of loops: 
