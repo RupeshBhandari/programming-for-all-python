@@ -138,6 +138,16 @@ In this example, `result` will be `"Positive"` if `number` is greater than 0, `"
 
 While ternary operations can make the code more concise, it's important to use them judiciously to maintain code readability. For more complex conditions, a traditional `if-else` statement might be more appropriate.
 
+### Truth Table
+
+| A     | B     | A ∧ B (AND) | A ∨ B (OR) |
+|-------|-------|------------|-----------|
+| False | False | False      | False     |
+| False | True  | False      | True      |
+| True  | False | False      | True      |
+| True  | True  | True       | True      |
+
+
 ## Loops
 
 Loops are an important control structure, as they allow you to repeat a block of code multiple times. There are two main types of loops: 
