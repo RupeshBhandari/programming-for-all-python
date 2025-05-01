@@ -96,7 +96,24 @@ In the example above, the **`open`** function is called with the file name and t
 
 Note that the **`with`** statement is used to open the file and automatically close it when the block of code is finished executing. This is a recommended practice to ensure that the file is properly closed and released after you are done with it.
 
+### Different File Modes in Python
 
+Python provides various file modes to work with files depending on your needs — whether it's reading, writing, or both. Here's a quick reference:
+
+| Mode   | Description |
+|--------|-------------|
+| `'r'`   | Open text file for **reading**. Raises an error if the file does not exist. |
+| `'r+'`  | Open for **reading and writing**. Raises an error if the file does not exist. |
+| `'w'`   | Open for **writing**. Truncates the file if it exists. Creates a new file if it doesn't. |
+| `'w+'`  | Open for **reading and writing**. Truncates the file if it exists. Creates a new file if it doesn't. |
+| `'a'`   | Open for **writing**. Appends data to the end of the file. Creates the file if it doesn't exist. |
+| `'a+'`  | Open for **reading and writing**. Appends data to the end. Creates the file if it doesn't exist. |
+| `'rb'`  | Open for **reading in binary mode**. Raises an error if the file doesn't exist. |
+| `'rb+'` | Open for **reading and writing in binary mode**. Raises an error if the file doesn't exist. |
+| `'wb'`  | Open for **writing in binary mode**. Truncates the file if it exists. Creates a new one if not. |
+| `'wb+'` | Open for **reading and writing in binary mode**. Truncates the file if it exists. Creates a new one if not. |
+| `'ab'`  | Open for **appending in binary mode**. Creates the file if it doesn't exist. |
+| `'ab+'` | Open for **reading and appending in binary mode**. Creates the file if it doesn't exist. |
 
 ## Exception handling
 
