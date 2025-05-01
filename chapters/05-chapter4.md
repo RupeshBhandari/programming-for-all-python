@@ -149,3 +149,43 @@ finally:
 ```
 
 In this example, the code in the **`finally`** block will be executed regardless of whether an exception is raised or not.
+
+### Built-in Exceptions in Python
+
+Python has a rich set of built-in exceptions that are raised when errors occur during execution. Here's a handy reference table:
+
+| Exception              | Description |
+|------------------------|-------------|
+| `ArithmeticError`         | Raised when an error occurs in numeric calculations. |
+| `AssertionError`          | Raised when an `assert` statement fails. |
+| `AttributeError`          | Raised when attribute reference or assignment fails. |
+| `Exception`               | Base class for all exceptions. |
+| `EOFError`                | Raised when the `input()` method hits an end-of-file condition (EOF). |
+| `FloatingPointError`      | Raised when a floating point calculation fails. |
+| `GeneratorExit`           | Raised when a generator is closed using `close()`. |
+| `ImportError`             | Raised when an imported module does not exist. |
+| `IndentationError`        | Raised when indentation is not correct. |
+| `IndexError`              | Raised when an index of a sequence is out of range. |
+| `KeyError`                | Raised when a key is not found in a dictionary. |
+| `KeyboardInterrupt`       | Raised when the user interrupts program execution (e.g., Ctrl+C). |
+| `LookupError`             | Base class for lookup errors like `IndexError` and `KeyError`. |
+| `MemoryError`             | Raised when the program runs out of memory. |
+| `NameError`               | Raised when a variable is not defined. |
+| `NotImplementedError`     | Raised when an abstract method is not overridden in an inherited class. |
+| `OSError`                 | Raised when a system-related operation fails. |
+| `OverflowError`           | Raised when a numeric result exceeds the allowed range. |
+| `ReferenceError`          | Raised when a weak reference is no longer valid. |
+| `RuntimeError`            | Raised for unspecified runtime errors. |
+| `StopIteration`           | Raised to signal the end of iteration. |
+| `SyntaxError`             | Raised when a syntax error is detected. |
+| `TabError`                | Raised when inconsistent use of tabs and spaces is detected. |
+| `SystemError`             | Raised when a system-related internal error occurs. |
+| `SystemExit`              | Raised when `sys.exit()` is called. |
+| `TypeError`               | Raised when an operation is applied to an object of inappropriate type. |
+| `UnboundLocalError`       | Raised when a local variable is referenced before assignment. |
+| `UnicodeError`            | Base class for Unicode-related errors. |
+| `UnicodeEncodeError`      | Raised when a Unicode encoding error occurs. |
+| `UnicodeDecodeError`      | Raised when a Unicode decoding error occurs. |
+| `UnicodeTranslateError`   | Raised when a Unicode translation error occurs. |
+| `ValueError`              | Raised when a function receives the right type but an inappropriate value. |
+| `ZeroDivisionError`       | Raised when division or modulo by zero is attempted. |
