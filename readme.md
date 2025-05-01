@@ -41,12 +41,12 @@ Welcome to the repository for the Python edition of "Programming for All"!
     - [Classes and objects](chapters/06-chapter5.md#classes-and-objects)
     - [Inheritance and polymorphism](chapters/06-chapter5.md#inheritance-and-polymorphism)
     - [Encapsulation and data hiding](chapters/06-chapter5.md#encapsulation-and-data-hiding)
-    - [Concurrency](chapters/06-chapter5.md#concurrency)
 
 ## Part IV: Advanced Python Features
 - [Chapter 6: Advanced Python Features](chapters/07-chapter6.md)
     - [Generators and iterators](chapters/07-chapter6.md#generators-and-iterators)
     - [Decorators](chapters/07-chapter6.md#decorators)
+    - [Concurrency](chapters/07-chapter6.md#concurrency)
     - [Working with modules and packages](chapters/07-chapter6.md#working-with-modules-and-packages)
 
 ## Part V: Python Applications

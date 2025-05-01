@@ -45,7 +45,6 @@ print(next(it)) # Raises StopIteration
 ```
 
 In this example, we have used the **`iter()`** function to create an iterator from the **`my_list`** object. We can then use the **`next()`** function to retrieve the next value from the iterator. When the iterator is exhausted, the **`next()`** function raises a **`StopIteration`** exception.
-
 ## Decorators
 
 A decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying its code. Decorators are a powerful and convenient way to modify or enhance the functionality of a function, and they are often used to add additional behavior to functions that are called before or after the original function is executed.
@@ -77,6 +76,7 @@ In this example, we have defined a decorator function called **`my_decorator`** 
 We have then used the **`@`** symbol to decorate the **`my_function`** function with the **`my_decorator`** decorator. When we call the decorated **`my_function`**, the additional behavior added by the decorator is executed before and after the function is called.
 
 Decorators are often used to add logging, authentication, or other types of behavior to functions. They are a powerful and convenient way to modify the behavior of a function without modifying its code.
+
 ## Concurrency
 
 Concurrency is a crucial concept in programming, allowing multiple tasks to make progress without waiting for each other to complete. Python provides several ways to handle concurrency, including threading, multiprocessing, and asynchronous programming.
